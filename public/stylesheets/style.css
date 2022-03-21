@@ -9,6 +9,10 @@ body {
   font-family: sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container-custom {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,7 +62,6 @@ aside {
 
 .icon > a {
   font-size: 10px;
-  text-decoration: none;
   display: block;
   color: white;
 }
