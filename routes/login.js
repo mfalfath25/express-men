@@ -1,10 +1,8 @@
 var router = require('express').Router()
-const auth = require('../middleware/auth')
+const auth = require('../controllers/auth')
+const setLayout = require('../middleware/setLayout')
 
-/* GET login page. */
-router.get('/', (req, res, next) => {
-  res.render('login', { title: 'Login', statusCode: res.statusCode })
-})
+// router.use(setLayout('login'))
 
 router.get('/', auth.loginGet)
 router.post('/', auth.loginPost)

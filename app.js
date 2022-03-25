@@ -5,9 +5,20 @@ var path = require('path') // for path.join
 var logger = require('morgan') // HTTP request logger middleware for node.js
 var expressLayout = require('express-ejs-layouts') // layout for ejs
 var session = require('express-session') // session middleware
+var mongoose = require('mongoose') // mongoose library
+require('dotenv').config() // load .env file
 
-// define express app
-var app = express()
+var app = express() // define express app
+var DB_URI = process.env.DB_URI // database URI
+
+mongoose
+  .connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to database')
+  })
+  .catch((err) => {
+    console.log('MongoDB connection error')
+  })
 
 // view engine & ejs layout setup
 app.set('views', path.join(__dirname, 'views/pages'))
@@ -23,10 +34,6 @@ app.use(express.static(path.join(__dirname, 'public'))) // add static files (pub
 
 // import main routes
 app.use('/', require('./routes'))
-
-app.post('/cars/add', (req, res) => {
-  res.json(req.body)
-})
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

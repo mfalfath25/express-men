@@ -9,7 +9,5 @@ router.get('/', (req, res) => {
 router.use('/login', require('./login'))
 router.use('/dashboard', require('./dashboard'))
 router.use('/cars', require('./cars'))
-// router.use('/cars/add', require('./cars'))
-// router.use('/cars/delete', require('./cars'))
 
 module.exports = router

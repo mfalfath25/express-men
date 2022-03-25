@@ -1,8 +1,10 @@
 // auth login checker
 module.exports = {
+  // get login page
   loginGet: (req, res) => {
     res.render('login', { title: 'Login', statusCode: res.statusCode })
   },
+  // post login data
   loginPost: (req, res) => {
     const { email, password } = req.body
     const emailCheck = /^[\w\.\_\-]+@[a-z]+\.[a-z\.]+$/

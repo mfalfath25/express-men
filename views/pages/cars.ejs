@@ -14,10 +14,10 @@
         >
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="#" class="text-dark"><strong>Cars</strong></a>
+              <a href="/cars" class="text-dark"><strong>Cars</strong></a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
-              List Cars
+              <a href="/cars" class="text-dark">List Cars</a>
             </li>
           </ol>
         </nav>
@@ -87,15 +87,11 @@
     </section>
     <section class="content-result">
       <div class="d-flex flex-row flex-wrap">
-        <%- include('../partials/item-card.ejs') %> <%-
-        include('../partials/item-card.ejs') %> <%-
-        include('../partials/item-card.ejs') %> <%-
-        include('../partials/item-card.ejs') %> <%-
-        include('../partials/item-card.ejs') %> <%-
-        include('../partials/item-card.ejs') %> <%-
-        include('../partials/item-card.ejs') %>
+        <% if (cars) { %> <% cars.map((car)=> { %> <%-
+        include('../partials/item-card.ejs', {car}) %> <% }) %> <% } %>
       </div>
     </section>
   </main>
 </div>
 <script src="/javascripts/sidebarToggler.js"></script>
+<script src="/javascripts/deleteModal.js"></script>
