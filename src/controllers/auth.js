@@ -2,7 +2,7 @@
 module.exports = {
   // get login page
   loginGet: (req, res) => {
-    res.render('login', { title: 'Login', statusCode: res.statusCode })
+    res.render('pages/login', { title: 'Login', statusCode: res.statusCode })
   },
   // post login data
   loginPost: (req, res) => {
@@ -11,7 +11,7 @@ module.exports = {
     const passCheck = /^[\w\d]{6,}$/
 
     if (!emailCheck.test(email) || !passCheck.test(password)) {
-      res.status(401).render('login', {
+      res.status(401).render('pages/login', {
         title: 'Login',
         statusCode: res.statusCode,
         error:

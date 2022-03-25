@@ -1,0 +1,80 @@
+<section class="main-content">
+  <div class="main-top pt-4">
+    <nav
+      class="pb-1"
+      style="
+                --bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);
+                );
+              "
+      aria-label="breadcrumb"
+    >
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/dashboard" class="text-dark"><strong>Dashboard</strong></a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <a href="/dashboard" class="text-dark">Dashboard</a>
+        </li>
+      </ol>
+    </nav>
+    <h5 class="py-3"><strong>Dashboard</strong></h5>
+  </div>
+
+  <div class="main-bottom mt-3">
+    <div class="list-order">
+      <p class="border-4 border-start border-primary ps-2">
+        <strong>List Order</strong>
+      </p>
+      <div id="demo_info" class="box"></div>
+      <table id="list-order" class="display" style="width: 100%">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>User Email</th>
+            <th>Car</th>
+            <th>Start Rent</th>
+            <th>Finish Rent</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <!-- <tbody>
+          <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody> -->
+      </table>
+    </div>
+
+    <div class="list-car pt-5">
+      <p class="border-4 border-start border-primary ps-2">
+        <strong>List Car</strong>
+      </p>
+      <div id="demo_info" class="box"></div>
+      <table id="list-car" class="display" style="width: 100%">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Start Rent</th>
+            <th>Finish Rent</th>
+            <th>Created at</th>
+            <th>Updated at</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (cars) { %> <% cars.map((car)=> { %> <%-
+          include('../partials/tableData.ejs', {car}) %> <% }) %> <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

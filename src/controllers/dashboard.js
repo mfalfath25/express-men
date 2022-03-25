@@ -4,7 +4,7 @@ module.exports = {
   getCarList: async (req, res) => {
     const cars = await Car.find()
 
-    res.render('dashboard', {
+    res.render('pages/dashboard', {
       title: 'Dashboard',
       heading: 'DASHBOARD',
       subHeading: 'Dashboard',

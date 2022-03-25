@@ -36,6 +36,10 @@ const CarSchema = new Schema({
     required: false,
     default: currDate,
   },
+  message: {
+    type: String,
+    required: false,
+  }
 })
 
 // Compile model from schema

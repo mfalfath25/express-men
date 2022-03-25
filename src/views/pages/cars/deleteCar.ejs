@@ -14,7 +14,7 @@
           <button
             type="button"
             class="btn btn-primary w-25 mx-2"
-            onclick="deleteData()"
+            onclick="deleteCar('<%= car.id %>')"
           >
             <strong>Ya</strong>
           </button>
@@ -30,3 +30,19 @@
     </div>
   </div>
 </div>
+<script>
+  const deleteCar = (id) => {
+  fetch(`/cars/${id}`, {
+    method: 'DELETE',
+  })
+    .then((res) => {
+      return res.render('pages/cars/:id', { id })
+    })
+    .then(() => {
+      const tID = setTimeout(function () {
+        window.location.href = "/cars";
+        window.clearTimeout(tID);		// clear time out.
+      }, 2000);
+    })
+  };
+</script>
