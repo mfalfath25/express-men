@@ -1,0 +1,13 @@
+<tr>
+  <td>-</td>
+  <td><%= car.nama %></td>
+  <td><%= car.kategori %></td>
+  <td>
+    <%= new Intl.NumberFormat('id-ID', {style: 'currency', currency:
+    'IDR'}).format(car.harga)%>
+  </td>
+  <td><%= new Date(car.rent_start).toLocaleDateString('en-CA') %></td>
+  <td><%= new Date(car.rent_end).toLocaleDateString('en-CA') %></td>
+  <td>-</td>
+  <td>-</td>
+</tr>

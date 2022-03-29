@@ -1,0 +1,161 @@
+<section class="main-content">
+  <div class="main-top pt-4">
+    <nav
+      class="pb-1"
+      style="
+                --bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);
+                );
+              "
+      aria-label="breadcrumb"
+    >
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/cars" class="text-dark"><strong>Cars</strong></a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <a href="/cars" class="text-dark"><strong>List Cars</strong></a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <a href="/cars/add" class="text-dark">Add Car</a>
+        </li>
+      </ol>
+    </nav>
+    <div class="d-flex flex-row justify-content-between">
+      <h5 class="py-3"><strong>Add New Car</strong></h5>
+    </div>
+  </div>
+  <div class="main-bottom mt-3">
+    <form
+      class="form-inline container-fluid p-0"
+      action="/cars/add"
+      method="post"
+    >
+      <div class="row py-2">
+        <div class="col-2">
+          <label for="nama" class="col-form-label">Nama</label>
+          <span style="color: #ff0000">*</span>
+        </div>
+        <div class="col-4">
+          <input
+            type="text"
+            name="nama"
+            class="form-control col-form-label"
+            id="nama"
+            required
+          />
+        </div>
+      </div>
+      <div class="row py-2">
+        <div class="col-2">
+          <label for="harga" class="col-form-label">Harga</label>
+          <span style="color: #ff0000">*</span>
+        </div>
+        <div class="col-4">
+          <input
+            type="number"
+            name="harga"
+            class="form-control col-form-label"
+            id="harga"
+            required
+          />
+        </div>
+      </div>
+      <div class="row py-2">
+        <div class="col-2">
+          <label for="kategori" class="col-form-label">Kategori</label>
+          <span style="color: #ff0000">*</span>
+        </div>
+        <div class="col-4">
+          <!-- <input
+                type="text"
+                name="kategori"
+                class="form-control col-form-label"
+                id="kategori"
+                required
+              /> -->
+          <select
+            name="kategori"
+            class="form-select"
+            aria-label="Default select"
+          >
+            <option selected>Pilih kategori tipe mobil</option>
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+          </select>
+        </div>
+      </div>
+      <div class="row py-2">
+        <div class="col-2">
+          <label for="foto" class="col-form-label">Foto</label>
+          <span style="color: #ff0000">*</span>
+        </div>
+        <div class="col-4">
+          <input
+            type="file"
+            name="foto"
+            class="form-control col-form-label"
+            id="foto"
+            required
+          />
+          <div class="add-car-form">
+            <p class="m-0">File size max. 2MB</p>
+          </div>
+        </div>
+      </div>
+      <div class="row py-2">
+        <div class="col-2">
+          <label for="rent_start" class="col-form-label">Start Rent</label>
+        </div>
+        <div class="col-4">
+          <input
+            type="date"
+            name="rent_start"
+            class="form-control col-form-label"
+            id="rent_start"
+          />
+        </div>
+      </div>
+      <div class="row py-2">
+        <div class="col-2">
+          <label for="rent_end" class="col-form-label">Finish Rent</label>
+        </div>
+        <div class="col-4">
+          <input
+            type="date"
+            name="rent_end"
+            class="form-control col-form-label"
+            id="rent_end"
+          />
+        </div>
+      </div>
+      <div class="row py-2">
+        <div class="col-2">
+          <label for="email" class="col-form-label">Created at</label>
+        </div>
+        <div class="col-4">-</div>
+      </div>
+      <div class="row py-2">
+        <div class="col-2">
+          <label for="email" class="col-form-label">Updated at</label>
+        </div>
+        <div class="col-4">-</div>
+      </div>
+
+      <div class="mt-5">
+        <a href="/cars" class="me-2">
+          <button type="button" class="btn btn-outline-primary">Cancel</button>
+        </a>
+          <button type="submit" class="btn btn-primary" onclick="redirectPage()">Save</button>
+      </div>
+    </form>
+  </div>
+</section>
+<script>
+  // const redirectPage = () => {
+  //   const tID = setTimeout(function () {
+  //     window.location.href = "/cars";
+  //     window.clearTimeout(tID);		// clear time out.
+  //   }, 2000);
+  // };
+</script>

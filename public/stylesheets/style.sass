@@ -1,0 +1,105 @@
+* 
+	padding: 0 
+	margin: 0 
+	box-sizing: border-box
+
+body 
+	font-family: Helvetica, sans-serif
+	background-color: transparent;
+
+a 
+	text-decoration: none 
+
+.container-custom 
+	display: flex 
+
+aside 
+	display: flex 
+	min-height: 100vh 
+	position: fixed 
+
+.btn-success
+	background-color: #5CB85F !important
+
+.btn-outline-primary
+	// background-color: #CFD4ED !important
+
+.nav-icons 
+	background-color: #0d28a6 
+	width: 68px 
+
+.icon
+  height: 68px
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  text-align: center
+  > a
+    i
+      font-size: 34px
+    font-size: 10px
+    display: block
+    color: white
+
+.icon:hover,
+.icon:active,
+.icon:focus
+	background: rgba(255, 255, 255, 0.3) 
+
+.nav-desc 
+	width: 204px 
+	transition: 0.5s 
+	z-index: -1 
+
+.nav-item 
+	font-size: 14px 
+	display: block 
+	text-decoration: none 
+	color: black 
+	&:hover 
+		background-color: #cfd4ed 
+
+main 
+	margin-left: 268px 
+	width: 100% 
+	overflow: auto 
+	overflow-x: hidden 
+	transition: 0.5s 
+
+#toggle 
+	font-size: 34px 
+
+.main-content
+	padding: 0 1.5rem 
+	background-color: #f4f5f7 
+
+.content-result
+	background-color: #f4f5f7 
+
+.slide-left-nav 
+	margin-left: -268px 
+
+.slide-left-main 
+	margin-left: 60px 
+
+.content-login 
+	width: 600px 
+
+.card
+	width: 22rem
+	p
+		font-size: 18px
+
+.svg
+	width: 26px
+	padding: 6px 0
+
+.add-car-form 
+	font-size: 14px 
+	color: #8A8A8A
+
+@media only screen and (max-width: 576px) 
+  .content-login
+    width: 100%

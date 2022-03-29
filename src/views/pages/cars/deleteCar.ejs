@@ -1,0 +1,48 @@
+<div class="vh-100 vw-100 d-flex justify-content-center align-items-center">
+  <div>
+    <div class="confirm-modal shadow-lg rounded" style="width: 400px">
+      <div class="modal-content border border-light">
+        <div class="modal-body d-flex flex-column align-items-center">
+          <img src="/assets/images/car-vector.png" alt="car-vector" />
+          <h4 class="py-3"><strong>Menghapus Data Mobil</strong></h4>
+          <p class="text-center">
+            Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin
+            menghapus?
+          </p>
+        </div>
+        <div class="d-flex flex-row justify-content-center pb-4">
+          <button
+            type="button"
+            class="btn btn-primary w-25 mx-2"
+            onclick="deleteCar('<%= car.id %>')"
+          >
+            <strong>Ya</strong>
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary w-25 mx-2"
+            onclick="closeModal()"
+          >
+            <strong>Tidak</strong>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const deleteCar = (id) => {
+  fetch(`/cars/${id}`, {
+    method: 'DELETE',
+  })
+    .then((res) => {
+      return res.render('pages/cars/:id', { id })
+    })
+    .then(() => {
+      const tID = setTimeout(function () {
+        window.location.href = "/cars";
+        window.clearTimeout(tID);		// clear time out.
+      }, 2000);
+    })
+  };
+</script>

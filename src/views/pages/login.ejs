@@ -1,0 +1,48 @@
+<div class="container-fluid d-flex flex-col min-vh-100 p-0">
+  <div
+    class="bg-login w-100"
+    style="background: url(/assets/images/login-splash.png) no-repeat"
+  >
+    <div
+      class="content-login bg-light position-absolute end-0 h-100 d-flex align-items-center"
+    >
+      <div class="px-5 w-100">
+        <div class="logo pb-3 mb-3">
+          <img src="/assets/images/logo-bcr.png" alt="logo" />
+        </div>
+        <h2 class="pb-3 mb-3"><strong>Welcome, Admin BCR</strong></h2>
+
+        <form action="/login" method="post">
+          <% if(statusCode !== 200) { %>
+          <div class="alert alert-danger" role="alert">
+            <p class="m-0"><%= error %></p>
+          </div>
+          <% } %>
+          <div class="mb-4">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              id="email"
+              placeholder="Contoh: johndee@gmail.com"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="password"
+              placeholder="6+ karakter"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mt-3">
+            <strong> Sign In </strong>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

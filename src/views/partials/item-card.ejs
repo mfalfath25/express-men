@@ -1,0 +1,74 @@
+<div class="card p-3 m-4">
+  <img src="assets/images/car-dummy.png" class="card-img-top" alt="..." />
+  <div class="card-body py-4 px-0 d-flex flex-column">
+    <p class="card-title"><%= car.nama %> / <%= car.kategori %></p>
+    <h5 class="card-price">
+      <strong
+        ><%= new Intl.NumberFormat('id-ID', {style: 'currency', currency:
+        'IDR'}).format(car.harga)%> / hari</strong
+      >
+    </h5>
+    <div class="d-flex flex-row align-items-center">
+      <img class="svg card-rent pe-2" src="assets/svg/fi_key.svg" alt="key" />
+      <p class="m-0">
+        <%= new Date(car.rent_start).toLocaleDateString('en-CA') %> - <%= new
+        Date(car.rent_end).toLocaleDateString('en-CA') %>
+      </p>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+      <img
+        class="svg card-date pe-2"
+        src="assets/svg/fi_clock.svg"
+        alt="clock"
+      />
+      <p class="m-0">Updated at</p>
+    </div>
+  </div>
+  <div class="d-flex flex-row justify-content-between">
+    <div>
+      <a onclick="deleteCar('<%= car.id %>')" class="w-50 py-3">
+        <button type="button" class="btn btn-outline-danger py-3 px-4">
+          <img
+            class="svg-button mb-1 me-2"
+            src="assets/svg/fi_trash-2.svg"
+            alt="delete"
+          />
+          <strong>Delete</strong>
+        </button>
+      </a>
+    </div>
+    <div>
+      <!-- <a href="/cars/edit?id=<%= car.id %>" class="py-3"> -->
+      <a href="/cars/edit/<%= car.id %>" class="py-3">
+        <button
+          type="button"
+          class="btn btn-success py-3 px-5"
+          
+        >
+          <img
+            class="svg-button mb-1 me-2"
+            src="assets/svg/fi_edit.svg"
+            alt="duration"
+          />
+          <strong>Edit</strong>
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+  const deleteCar = (id) => {
+    fetch(`/cars/${id}`, {
+      method: 'DELETE',
+    })
+      .then((res) => {
+        return res.render('pages/cars/:id', { id })
+      })
+      .then(() => {
+        const tID = setTimeout(function () {
+          window.location.href = "/cars";
+          window.clearTimeout(tID);		// clear time out.
+        }, 2000);
+      })
+  };
+</script>

@@ -6,7 +6,8 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Helvetica, sans-serif;
+  background-color: transparent;
 }
 
 a {
@@ -19,13 +20,16 @@ a {
   display: flex;
 }
 
-/* aside */
 aside {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
   position: fixed;
+}
+
+.btn-success {
+  background-color: #5CB85F !important;
 }
 
 .nav-icons {
@@ -52,27 +56,24 @@ aside {
   text-align: center;
 }
 
-.icon p {
-  margin: 0;
-}
-
-.icon > a i {
-  font-size: 34px;
-}
-
 .icon > a {
   font-size: 10px;
   display: block;
   color: white;
 }
 
+.icon > a i {
+  font-size: 34px;
+}
+
 .icon:hover,
-.icon:active {
+.icon:active,
+.icon:focus {
   background: rgba(255, 255, 255, 0.3);
 }
 
 .nav-desc {
-  width: 200px;
+  width: 204px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   z-index: -1;
@@ -89,7 +90,6 @@ aside {
   background-color: #cfd4ed;
 }
 
-/* main */
 main {
   margin-left: 268px;
   width: 100%;
@@ -104,11 +104,14 @@ main {
 }
 
 .main-content {
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   background-color: #f4f5f7;
 }
 
-/* effect */
+.content-result {
+  background-color: #f4f5f7;
+}
+
 .slide-left-nav {
   margin-left: -268px;
 }
@@ -117,9 +120,26 @@ main {
   margin-left: 60px;
 }
 
-/* Login page styles */
 .content-login {
   width: 600px;
+}
+
+.card {
+  width: 22rem;
+}
+
+.card p {
+  font-size: 18px;
+}
+
+.svg {
+  width: 26px;
+  padding: 6px 0;
+}
+
+.add-car-form {
+  font-size: 14px;
+  color: #8A8A8A;
 }
 
 @media only screen and (max-width: 576px) {
